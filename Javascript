@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Function Method</title>
+</head>
+<body>
+     
+    <h1>Constructor Function Method</h1>
+
+    <p id="demo"></p>
+
+    <p id="demo1"></p>
+
+    <p id="demo2"></p>
+
+    <script>
+        function Person(fname,lname,age,sex) {
+        this.fname = fname;
+        this.lname = lname;
+        this.age = age;
+        this.sex =  sex;
+    }
+
+    const mybro = new Person('Johnny','Sopranos',24,'male');
+    const mysis = new Person('Tatia','Markonov',32,'female');
+
+    
+   mysis.changeage = function(age){
+            this.age = age;
+    }
+
+    mysis.changeage(36);
+
+    document.getElementById('demo').innerHTML = mysis.fname + ' ' + 'is ' + mysis.age + ' years old. '
+
+    Person.prototype.changeage = function(age){
+        this.age = age;
+    }
+
+    mybro.changeage(26);
+
+    document.getElementById('demo1').innerHTML = mybro.fname + ' ' + 'is ' + mybro.age + ' years old. '
+
+    document.getElementById('demo2').innerHTML = 'It\'s all right boys.'
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>
